@@ -209,8 +209,15 @@ class Instapunchout(http.Controller):
         if resp.get("company_id") and not request.env["res.partner"].sudo().browse(resp["company_id"]).exists():
             return "Partner id " + str(resp["company_id"]) + " does not exist, Please contact your supplier to add the new id"
 
-        request.session["PunchoutId"] = resp["punchout_id"]
         email = resp["email"]
+        # punchout only ever logs in portal users: never internal or admin accounts
+        existing = find_user(request.env["res.users"].sudo(), email, resp.get("website_id"))
+        if existing and not existing.has_group("base.group_portal"):
+            _logger.warning("punchout: refused login of non-portal user %s", existing.id)
+            return Response("This account cannot be used for punchout because it is not a portal user. "
+                            "Please contact your supplier.", status=403, content_type="text/plain")
+
+        request.session["PunchoutId"] = resp["punchout_id"]
         user = upsert_user(resp)
         if not user:
             if not resp["account_create_disabled"]:
