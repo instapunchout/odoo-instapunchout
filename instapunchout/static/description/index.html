@@ -1,0 +1,69 @@
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <h2 class="oe_slogan" style="color:#1f2d5a;">Punchout for your Odoo webshop</h2>
+    <h3 class="oe_slogan">Let your B2B buyers shop on your Odoo website from inside their procurement system, and return the cart for approval.</h3>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div style="border:2px solid #d9822b;background:#fff7ec;border-radius:8px;padding:20px 24px;">
+      <h3 style="margin-top:0;color:#a85a00;">This module is free, the InstaPunchout service is not</h3>
+      <p style="font-size:16px;margin-bottom:8px;">
+        This module only connects Odoo to the InstaPunchout platform and <b>does nothing on its own</b>.
+        To use it you need an InstaPunchout subscription, billed directly by InstaPunchout (not through Odoo Apps):
+      </p>
+      <ul style="font-size:16px;">
+        <li>a <b>one-time setup fee</b>, and</li>
+        <li>a <b>yearly license per buyer connection</b>.</li>
+      </ul>
+      <p style="font-size:16px;margin-bottom:0;">
+        Contact <a href="mailto:info@instapunchout.com">info@instapunchout.com</a> or visit
+        <a href="https://www.instapunchout.com" target="_blank" rel="noopener">instapunchout.com</a> for a quote before installing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <h3 style="color:#1f2d5a;">How it works</h3>
+    <ol style="font-size:15px;">
+      <li>Your buyer clicks your shop in their procurement system (for example SAP Ariba, Coupa or SAP via OCI).</li>
+      <li>InstaPunchout validates the request and the buyer is logged in to your Odoo website as a portal user.</li>
+      <li>They browse your catalog with their own prices and fill the cart as usual.</li>
+      <li>The cart is sent back to the procurement system for approval, in cXML or OCI format.</li>
+    </ol>
+    <h3 style="color:#1f2d5a;">What you get</h3>
+    <ul style="font-size:15px;">
+      <li>cXML and OCI punchout on your existing Odoo eCommerce</li>
+      <li>Automatic login, with optional creation of portal users under the buyer's company</li>
+      <li>Cart edit: buyers can reopen a cart from their procurement system</li>
+      <li>Multi-website and multi-company support</li>
+      <li>Optional with InstaPunchout: receiving purchase orders into Odoo and sending invoices electronically</li>
+    </ul>
+    <h3 style="color:#1f2d5a;">Screenshots</h3>
+    <p style="font-size:15px;">A cart restored in Odoo during a punchout session:</p>
+    <img class="img img-fluid" src="screenshot_cart.png" alt="Cart restored during a punchout session" style="max-width:100%;border:1px solid #ddd;"/>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <h3 style="color:#1f2d5a;">Requirements</h3>
+    <ul style="font-size:15px;">
+      <li>Odoo 17 or later with the eCommerce app, on Odoo.sh or on-premise. Third-party modules can't be installed on Odoo Online: <a href="mailto:info@instapunchout.com">contact us</a> for the options there.</li>
+      <li>An InstaPunchout subscription (see above). We configure each buyer connection with you.</li>
+    </ul>
+    <h3 style="color:#1f2d5a;">Data and external services</h3>
+    <p style="font-size:15px;">To work, this module communicates with the InstaPunchout service at <b>punchout.cloud</b>:</p>
+    <ul style="font-size:15px;">
+      <li><b>Punchout start:</b> the headers, query string and body of requests to <code>/punchout</code> are sent to InstaPunchout, which decides whether to log the buyer in. It can create portal users on your database and log buyers in to your website.</li>
+      <li><b>Cart return:</b> the punchout cart is sent to InstaPunchout (cart and partner IDs, products, quantities, prices, taxes, totals, currency, delivery date and note).</li>
+      <li><b>Script:</b> during a punchout session only, the page loads a JavaScript file from InstaPunchout (<code>punchout.js</code>) that adds the return-cart button. Visitors outside a punchout session don't load it.</li>
+    </ul>
+    <p style="font-size:15px;">The module collects no usage statistics. See our <a href="https://www.instapunchout.com/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+    <h3 style="color:#1f2d5a;">Support</h3>
+    <p style="font-size:15px;">Email <a href="mailto:info@instapunchout.com">info@instapunchout.com</a>.</p>
+  </div>
+</section>
