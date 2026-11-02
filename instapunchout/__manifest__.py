@@ -1,6 +1,6 @@
 {
     "name": "InstaPunchout - cXML & OCI Punchout for eCommerce",
-    "version": "17.0.1.0.0",
+    "version": "20.0.1.0.0",
     "author": "InstaPunchout",
     "maintainer": "InstaPunchout",
     "support": "info@instapunchout.com",
