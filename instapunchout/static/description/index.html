@@ -58,7 +58,7 @@
     <h3 style="color:#1f2d5a;">Data and external services</h3>
     <p style="font-size:15px;">To work, this module communicates with the InstaPunchout service at <b>punchout.cloud</b>:</p>
     <ul style="font-size:15px;">
-      <li><b>Punchout start:</b> the headers, query string and body of requests to <code>/punchout</code> are sent to InstaPunchout, which decides whether to log the buyer in. It can create portal users on your database and log buyers in to your website.</li>
+      <li><b>Punchout start:</b> the headers, query string and body of requests to <code>/punchout</code> are sent to InstaPunchout, which decides whether to log the buyer in. It can create portal users on your database and log those users in to your website. Internal and admin accounts are always refused.</li>
       <li><b>Cart return:</b> the punchout cart is sent to InstaPunchout (cart and partner IDs, products, quantities, prices, taxes, totals, currency, delivery date and note).</li>
       <li><b>Script:</b> during a punchout session only, the page loads a JavaScript file from InstaPunchout (<code>punchout.js</code>) that adds the return-cart button. Visitors outside a punchout session don't load it.</li>
     </ul>
